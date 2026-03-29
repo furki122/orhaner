@@ -1,6 +1,9 @@
 "use client";
 
+import { useState } from "react";
+
 export default function OrhanerArtistWebsite() {
+  const [musicStarted, setMusicStarted] = useState(false);
   const tracks = [
     { title: "NASIL BAŞARDIN", type: "Official Video", duration: "3:20", url: "https://www.youtube.com/watch?v=fqv5Llch34o" },
     { title: "Kalp Yarası", type: "Official Video", duration: "3:11", url: "https://www.youtube.com/watch?v=PjcTzmPsTtI" },
@@ -20,13 +23,27 @@ export default function OrhanerArtistWebsite() {
   return (
     <div className="min-h-screen bg-neutral-950 text-white selection:bg-white selection:text-black">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-          <div>
-            <div className="text-2xl font-black tracking-[0.35em]">ORHANER</div>
-            <div className="text-xs uppercase tracking-[0.25em] text-white/50">Official Artist Website</div>
+        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-10">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <div className="text-xl font-black tracking-[0.32em] sm:text-2xl">ORHANER</div>
+              <div className="text-[10px] uppercase tracking-[0.22em] text-white/50 sm:text-xs">Official Artist Website</div>
+            </div>
+
+            <nav className="hidden gap-6 text-sm text-white/70 lg:flex">
+              <a href="#home" className="transition hover:text-white">Ana Sayfa</a>
+              <a href="#music" className="transition hover:text-white">Müzik</a>
+              <a href="#about" className="transition hover:text-white">Hakkında</a>
+              <a href="#shows" className="transition hover:text-white">Etkinlikler</a>
+              <a href="#gallery" className="transition hover:text-white">Galeri</a>
+              <a href="#contact" className="transition hover:text-white">İletişim</a>
+              <a href="https://www.youtube.com/@orhaner11" target="_blank" rel="noreferrer" className="transition hover:text-white">YouTube</a>
+              <a href="https://www.instagram.com/orhaner___?hl=de" target="_blank" rel="noreferrer" className="transition hover:text-white">Instagram</a>
+              <a href="https://www.tiktok.com/@orhaner__" target="_blank" rel="noreferrer" className="transition hover:text-white">TikTok</a>
+            </nav>
           </div>
 
-          <nav className="hidden gap-8 text-sm text-white/70 md:flex">
+          <div className="mt-4 flex gap-4 overflow-x-auto whitespace-nowrap pb-1 text-sm text-white/70 lg:hidden">
             <a href="#home" className="transition hover:text-white">Ana Sayfa</a>
             <a href="#music" className="transition hover:text-white">Müzik</a>
             <a href="#about" className="transition hover:text-white">Hakkında</a>
@@ -36,7 +53,7 @@ export default function OrhanerArtistWebsite() {
             <a href="https://www.youtube.com/@orhaner11" target="_blank" rel="noreferrer" className="transition hover:text-white">YouTube</a>
             <a href="https://www.instagram.com/orhaner___?hl=de" target="_blank" rel="noreferrer" className="transition hover:text-white">Instagram</a>
             <a href="https://www.tiktok.com/@orhaner__" target="_blank" rel="noreferrer" className="transition hover:text-white">TikTok</a>
-          </nav>
+          </div>
         </div>
       </header>
 
@@ -46,13 +63,13 @@ export default function OrhanerArtistWebsite() {
         <div className="absolute right-10 top-24 h-96 w-96 rounded-full bg-white/[0.04] blur-3xl" />
         <div className="absolute bottom-0 left-1/2 h-40 w-[70%] -translate-x-1/2 rounded-full bg-white/[0.04] blur-3xl" />
 
-        <div className="mx-auto grid min-h-[100vh] max-w-7xl items-center gap-8 px-6 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:px-10">
+        <div className="mx-auto grid min-h-[100vh] max-w-7xl items-center gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-10">
           <div className="relative z-10 pt-10 lg:pt-0">
             <div className="mb-5 inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/70 backdrop-blur-sm">
               Yeni Nesil Sanatçı
             </div>
 
-            <h1 className="max-w-3xl text-6xl font-black leading-[0.95] tracking-tight sm:text-7xl lg:text-[7.2rem]">
+            <h1 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-tight sm:text-7xl lg:text-[7.2rem]">
               ORHANER
             </h1>
 
@@ -72,7 +89,7 @@ export default function OrhanerArtistWebsite() {
               </a>
             </div>
 
-            <div className="mt-11 grid max-w-xl grid-cols-3 gap-4">
+            <div className="mt-11 grid max-w-xl grid-cols-1 gap-4 sm:grid-cols-3">
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                 <div className="text-3xl font-black">4</div>
                 <div className="mt-1 text-sm text-white/60">Öne Çıkan Şarkı</div>
@@ -89,14 +106,14 @@ export default function OrhanerArtistWebsite() {
           </div>
 
           <div className="relative z-10 flex justify-center lg:justify-end">
-            <div className="relative flex h-[980px] w-full max-w-[980px] items-end justify-center overflow-visible">
+            <div className="relative flex h-[620px] w-full max-w-[980px] items-end justify-center overflow-visible sm:h-[760px] lg:h-[980px]">
               <div className="absolute inset-y-10 right-[10%] w-[70%] rounded-[3rem] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.10),transparent_58%)] blur-xl" />
               <div className="absolute bottom-8 right-[12%] h-52 w-[68%] rounded-full bg-white/10 blur-3xl" />
               <div className="absolute bottom-0 right-[8%] h-24 w-[62%] rounded-full bg-black/70 blur-2xl" />
               <img
                 src="/hero.png"
                 alt="Orhaner hero"
-                className="relative z-10 h-[1100px] w-auto max-w-none object-contain drop-shadow-[0_40px_110px_rgba(0,0,0,0.88)]"
+                className="relative z-10 h-[680px] w-auto max-w-none object-contain drop-shadow-[0_40px_110px_rgba(0,0,0,0.88)] sm:h-[820px] lg:h-[1100px]"
               />
               <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-transparent to-black/10 blur-xl" />
               <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-neutral-950 via-neutral-950/75 to-transparent blur-2xl" />
@@ -250,7 +267,7 @@ export default function OrhanerArtistWebsite() {
         </div>
       </section>
 
-      <section id="contact" className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+      <section id="contact" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr]">
           <div>
             <div className="text-xs uppercase tracking-[0.35em] text-white/45">İletişim</div>
@@ -296,6 +313,23 @@ export default function OrhanerArtistWebsite() {
           </div>
         </div>
       </footer>
+
+      <button
+        onClick={() => setMusicStarted((v) => !v)}
+        className="fixed bottom-5 right-5 z-[60] rounded-full border border-white/15 bg-black/75 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-black/90"
+      >
+        {musicStarted ? "Müziği Durdur" : "Müziği Başlat"}
+      </button>
+
+      {musicStarted && (
+        <div className="pointer-events-none fixed bottom-0 left-0 h-0 w-0 overflow-hidden opacity-0">
+          <iframe
+            src="https://www.youtube.com/embed/fqv5Llch34o?autoplay=1&loop=1&playlist=fqv5Llch34o"
+            title="Orhaner background music"
+            allow="autoplay; encrypted-media"
+          />
+        </div>
+      )}
     </div>
   );
 }
